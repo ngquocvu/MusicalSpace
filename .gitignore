@@ -7,7 +7,7 @@
 build/
 
 # local env files
-.env
+
 .env.development.local
 .env.test.local
 .env.production.local
