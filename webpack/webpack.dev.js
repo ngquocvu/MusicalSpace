@@ -14,5 +14,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(dotenv.config().parsed), // it will automatically pick up key values from .env file
     }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
   ],
 }
