@@ -1,0 +1,6 @@
+export const SET_ALBUMS: string = 'SET_ALBUMS'
+export const ADD_ALBUMS: string = 'ADD_ALBUMS'
+export const SET_ARTISTS: string = 'SET_ARTISTS'
+export const ADD_ARTISTS: string = 'ADD_ARTISTS'
+export const SET_PLAYLIST: string = 'SET_PLAYLIST'
+export const ADD_PLAYLIST: string = 'ADD_PLAYLIST'
