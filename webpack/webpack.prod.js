@@ -1,5 +1,5 @@
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const dotenv = require('dotenv').config()
+const Dotenv = require('dotenv-webpack')
 const webpack = require('webpack')
 module.exports = {
   mode: 'production',
