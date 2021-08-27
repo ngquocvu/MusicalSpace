@@ -1,4 +1,4 @@
-import { SET_ARTISTS } from '../src/utils/constants'
+import { SET_ALBUMS, SET_ARTISTS } from '../../utils/constants'
 
 const artistsReducer = (state = {}, action: any) => {
   const { artists } = action

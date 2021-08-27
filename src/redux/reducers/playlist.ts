@@ -1,4 +1,4 @@
-import { SET_PLAYLIST } from '../src/utils/constants'
+import { SET_ALBUMS, SET_PLAYLIST } from '../../utils/constants'
 
 const playListsReducer = (state = {}, action: any) => {
   const { playlists } = action

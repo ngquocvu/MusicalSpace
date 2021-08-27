@@ -4,30 +4,31 @@ import Card from '../Card'
 interface CardListProps {
   content: {
     items: {
-      album_type: string
       artists: {
         name: string
       }[]
       name: string
-      images: {
-        url: string
-      }[]
-      release_date: string
+      album: {
+        images: {
+          url: string
+        }[]
+      }
+      preview_url: string
     }[]
   }
 }
 
 export const CardList = ({ content }: CardListProps) => {
   return (
-    <>
-      {content.items.slice(1, 5).map((item, index) => (
+    <div className="w-full  grid lg:grid-cols-6 md:grid-cols-6 grid-cols-3">
+      {content.items.map((item, index) => (
         <Card
           key={index}
-          thumbnail={item.images[0].url}
+          thumbnail={item.album.images[0].url}
           title={item.name}
           artist={item.artists[0].name}
         />
       ))}
-    </>
+    </div>
   )
 }

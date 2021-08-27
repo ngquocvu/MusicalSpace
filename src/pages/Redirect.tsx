@@ -9,18 +9,18 @@ const Redirect = (props: RedirectProps) => {
   useEffect(() => {
     try {
       if (_.isEmpty(location.hash)) {
-        return history.push('/dashboard')
+        return history.push('/')
       }
       const access_token = getParamValues(location.hash)
       const expiryTime = new Date().getTime() + access_token.expires_in * 1000
       localStorage.setItem('params', JSON.stringify(access_token))
       localStorage.setItem('expiry_time', expiryTime.toString())
-      history.push('/dashboard')
-    } catch (error) {
       history.push('/')
+    } catch (error) {
+      history.push('/auth')
     }
   })
 
-  return <div>hello</div>
+  return <div></div>
 }
 export default Redirect

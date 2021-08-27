@@ -8,19 +8,16 @@ interface CardProps {
 }
 const Card = ({ thumbnail, title, artist }: CardProps) => {
   return (
-    <div className="bg-gray-50 p-3 w-60 c rounded-md shadow-lg">
-      <div className="mb-2">
-        <img
-          src={thumbnail}
-          className="h-48 object-cover object-center w-full rounded-sm"
-        ></img>
+    <div className="group cursor-pointer relative">
+      <div className="absolute bottom-5 p-2 text-sm w-full text-center opacity-0 z-20 group-hover:opacity-100">
+        <div className="font-bold">{title}</div>
+        <div className="text-xs">{artist}</div>
       </div>
-      <div className="bg-transparent text-lg text-gray-900 font-bold mb-1s">
-        {title}
-      </div>
-      <div className="text-sm bg-transparent text-gray-600 font-semibold ">
-        {artist}
-      </div>
+
+      <img
+        src={thumbnail}
+        className="object-cover w-50 h-50 object-center w-full filter bg-black group-hover:opacity-50"
+      ></img>
     </div>
   )
 }

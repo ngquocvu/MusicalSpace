@@ -1,12 +1,20 @@
-import { SET_ALBUMS } from '../src/utils/constants'
+import { SET_ALBUMS } from '../../utils/constants'
 
 const defaultContent = {
   items: [
     {
       album_type: '',
-      artist: [''],
+      artists: [
+        {
+          name: '',
+        },
+      ],
       name: '',
-      images: [''],
+      images: [
+        {
+          url: '',
+        },
+      ],
       release_date: '',
     },
   ],

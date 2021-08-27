@@ -1,12 +1,12 @@
 import {
-  SET_ALBUMS,
   ADD_ALBUMS,
-  SET_ARTISTS,
   ADD_ARTISTS,
-  SET_PLAYLIST,
   ADD_PLAYLIST,
-} from '../src/utils/constants'
-import { get } from '../src/utils/functions'
+  SET_ALBUMS,
+  SET_ARTISTS,
+  SET_PLAYLIST,
+} from '../../utils/constants'
+import { get } from '../../utils/functions'
 
 export const setAlbums = (albums: any) => ({
   type: SET_ALBUMS,
@@ -41,6 +41,7 @@ export const initiateGetResult = (searchTerm: string) => {
       )}&type=album,playlist,artist`
       const result = await get(API_URL)
       const { albums, playlists, artists } = result
+      console.log(albums)
       dispatch(setAlbums(albums))
       dispatch(setArtists(artists))
       return dispatch(setPlayList(playlists))
