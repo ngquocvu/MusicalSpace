@@ -2,9 +2,12 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import _ from 'lodash'
 import { getParamValues } from '../utils/functions'
-interface RedirectProps {}
+interface RedirectProps {
+  setExpiryTime: (time: string) => void
+  isValidSession: () => boolean
+}
 
-const Redirect = (props: RedirectProps) => {
+const Redirect = ({ setExpiryTime, isValidSession }: RedirectProps) => {
   const history = useHistory()
   useEffect(() => {
     try {
