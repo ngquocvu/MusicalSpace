@@ -9,12 +9,13 @@ interface AuthProps {
 
 export const Auth = ({ setExpiryTime, isValidSession }: AuthProps) => {
   return !isValidSession() ? (
-    <div className="container p-6 mx-auto flex items-center justify-center text-center">
+    <div className=" mx-auto flex flex-col items-center justify-center">
+      <div className="text-2xl font-bold  text-gray-200 pb-4">Đăng nhập </div>
       <button
-        className="bg-green-400 p-4 w-full md:w-1/2 rounded-full font-semibold text-gray-50 text-lg cursor-pointer shadow-inner hover:shadow-md animate-pulse"
+        className="bg-green-500 p-4 w-full md:w-1/2 rounded-full font-semibold text-gray-50 text-lg cursor-pointer shadow-inner hover:shadow-md "
         onClick={handleLogin}
       >
-        Login to spotify
+        Đăng nhập qua Spotify
       </button>
     </div>
   ) : (
