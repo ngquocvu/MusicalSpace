@@ -9,7 +9,7 @@ export const loadTrack = () => {
   return async (dispatch: any) => {
     try {
       dispatch({ type: FETCH_TRACKS_REQUEST })
-      const API_URL = `https://api.spotify.com/v1/me/top/tracks/`
+      const API_URL = `https://api.spotify.com/v1/me/top/tracks?limit=50`
       const result = await get(API_URL)
       console.log(result)
       return dispatch({ type: FETCH_TRACKS_SUCCESS, data: result })
