@@ -3,7 +3,7 @@ const handleLogin = () => {
   window.location.href = `${process.env.REACT_APP_AUTHORIZE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}&scope=user-read-private%20user-read-email%20user-top-read&response_type=token&show_dialog=true`
 }
 interface AuthProps {
-  setExpiryTime: (time: string) => void
+  setExpiryTime: (time: number) => void
   isValidSession: () => boolean
 }
 

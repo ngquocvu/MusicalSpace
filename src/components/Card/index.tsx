@@ -17,7 +17,7 @@ const Card = ({
       className="group cursor-pointer relative"
       onClick={() => playAudio(previewURL)}
     >
-      <div className="absolute bottom-5 p-2 text-sm w-full text-center opacity-0 z-20 group-hover:opacity-100">
+      <div className="absolute bottom-5 p-2 transition text-sm w-full text-center opacity-0 z-20 group-hover:opacity-100">
         <div className="font-bold">{title}</div>
         <div className="text-xs">{artist}</div>
       </div>

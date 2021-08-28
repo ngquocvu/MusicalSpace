@@ -4,8 +4,10 @@ import { RootState } from '../../redux/reducers'
 import { CardList } from '../../components/CardList'
 import { loadTrack } from '../../redux/actions/tracks'
 import { Redirect } from 'react-router-dom'
+import { Header } from '../../components/Header'
+import { setPage } from '../../redux/actions/currentPage'
 interface DashboardProps {
-  setExpiryTime: (time: string) => void
+  setExpiryTime: (time: number) => void
   isValidSession: () => boolean
 }
 
@@ -22,11 +24,13 @@ export const Dashboard = ({
   useEffect(() => {
     // dispatch(initiateGetResult('alpha'))
     // console.log(albums)
+    console.log('Chay useEffect Dashboard')
     dispatch(loadTrack())
+    dispatch(setPage('topSongs'))
   }, [])
   return isValidSession() ? (
-    <div className="flex flex-col text-white  bg-black min-h-screen">
-      <div className="p-4 font-bold text-3xl text-gray-200">Your top songs</div>
+    <div className="flex flex-col text-white bg-black min-h-screen">
+      <Header />
       <div className="w-full">
         <CardList content={tracks} />
       </div>
