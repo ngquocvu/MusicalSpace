@@ -5,7 +5,7 @@ import {
 } from '../../utils/constants'
 import { get } from '../../utils/functions'
 
-export const loadTrack = () => {
+export const loadTopTrack = () => {
   return async (dispatch: any) => {
     try {
       dispatch({ type: FETCH_TRACKS_REQUEST })

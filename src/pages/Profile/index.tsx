@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import { Header } from '../../components/Header'
 import { setPage } from '../../redux/actions/currentPage'
 import { loadProfile } from '../../redux/actions/profile'

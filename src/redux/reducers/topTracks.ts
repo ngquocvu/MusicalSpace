@@ -30,7 +30,7 @@ const initialState = {
   },
 }
 
-const tracksReducers = (state = initialState, action: any) => {
+const topTracksReducers = (state = initialState, action: any) => {
   switch (action.type) {
     case FETCH_TRACKS_REQUEST:
       return { ...state, requesting: true }
@@ -42,4 +42,4 @@ const tracksReducers = (state = initialState, action: any) => {
       return state
   }
 }
-export default tracksReducers
+export default topTracksReducers

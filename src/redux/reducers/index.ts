@@ -4,14 +4,17 @@ import artistsReducer from './artists'
 import currentPageReducer from './currentPage'
 import playListsReducer from './playlist'
 import ProfileReducer from './profile'
-import tracksReducers from './tracks'
+import topTracksReducers from './topTracks'
+import TrackReducers from './track'
+
 export const rootReducer = combineReducers({
   albums: albumsReducer,
   artists: artistsReducer,
   playlists: playListsReducer,
-  tracks: tracksReducers,
+  topTracks: topTracksReducers,
   currentPage: currentPageReducer,
   profile: ProfileReducer,
+  tracks: TrackReducers,
 })
 export default rootReducer
 export type RootState = ReturnType<typeof rootReducer>

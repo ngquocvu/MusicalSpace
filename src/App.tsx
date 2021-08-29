@@ -5,7 +5,7 @@ import { Dashboard } from './pages/Dashboard'
 import Auth from './pages/Auth'
 import { useEffect, useState } from 'react'
 import Profile from './pages/Profile'
-import Browser from './pages/Browser'
+import Browser from './pages/Search'
 
 export const App = () => {
   const [expiryTime, setExpiryTime] = useState(0)
@@ -42,7 +42,7 @@ export const App = () => {
           <Route path="/profile">
             <Profile isValidSession={isValidSection} />
           </Route>
-          <Route path="/browser">
+          <Route path="/search">
             <Browser isValidSession={isValidSection} />
           </Route>
           <Route component={PageNotFound} />
