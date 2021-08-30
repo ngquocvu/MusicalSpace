@@ -21,13 +21,16 @@ const Profile = ({ isValidSession }: Props) => {
   return (
     <div>
       <Header />
-      <div className="flex flex-col justify-center items-center space-y-2">
+      <div className="flex flex-col justify-center items-center space-y-4">
         <img src={profile.images[0].url} className="rounded-full h-40"></img>
         <div className="text-gray-100 rounded-full text-5xl font-bold">
           {profile.display_name}
         </div>
-        <div className="text-gray-200 rounded-full text-lg font-semibold text-gray-200">
+        <div className="text-gray-200 rounded-full text-base font-semibold bg-green-700 py-2 px-4 text-gray-200">
           {String(profile.product).toLocaleUpperCase()}
+        </div>
+        <div className="text-gray-200 rounded-md text-base font-semibold py-2 px-8 text-gray-100 hover:text-red-600 cursor-pointer" >
+          Đăng xuất
         </div>
         {/* <div className="text-gray-50">Followers: {profile.followers.total}</div> */}
       </div>

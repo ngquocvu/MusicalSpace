@@ -11,7 +11,6 @@ export const loadProfile = () => {
       dispatch({ type: FETCH_PROFILE_REQUEST })
       const API_URL = `https://api.spotify.com/v1/me`
       const result = await get(API_URL)
-      console.log(dispatch({ type: FETCH_PROFILE_SUCCESS, data: result }))
       return dispatch({ type: FETCH_PROFILE_SUCCESS, data: result })
     } catch (error) {
       dispatch({ type: FETCH_PROFILE_ERROR, message: error })

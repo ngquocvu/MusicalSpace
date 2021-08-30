@@ -7,7 +7,7 @@ interface CardListProps {
 }
 
 const CardList = ({ type, content }: CardListProps) => {
-  return content.items[0].name !== '.' ? (
+  return (
     <div className="space-y-4 pt-2">
       <div className="text-2xl">{type}</div>
       <div className="grid md:grid-cols-7 grid-cols-2 gap-2">
@@ -16,8 +16,6 @@ const CardList = ({ type, content }: CardListProps) => {
         ))}
       </div>
     </div>
-  ) : (
-    <></>
   )
 }
 

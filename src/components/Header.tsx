@@ -9,16 +9,16 @@ export const Header = () => {
   return (
     <div className="font-bold text-xl md:text-2xl pb-4 flex space-x-6 text-gray-400  cursor-pointer">
       <div
-        className={currentPage === 'browser' ? 'text-gray-50 ' : ''}
+        className={currentPage === 'search' ? 'text-gray-50 ' : ''}
         onClick={() => history.push('/search')}
       >
         Search
       </div>
       <div
-        className={currentPage === 'topSongs' ? 'text-gray-50' : ''}
+        className={currentPage === 'browse' ? 'text-gray-50' : ''}
         onClick={() => history.push('/')}
       >
-        Top songs
+        Browse
       </div>
       <div
         className={currentPage === 'profile' ? 'text-gray-50' : ''}

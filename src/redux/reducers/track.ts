@@ -7,7 +7,7 @@ const initialState = {
           name: '',
         },
       ],
-      name: '.',
+      name: '',
       album: {
         images: [
           {

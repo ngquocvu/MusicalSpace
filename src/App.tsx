@@ -5,7 +5,8 @@ import { Dashboard } from './pages/Dashboard'
 import Auth from './pages/Auth'
 import { useEffect, useState } from 'react'
 import Profile from './pages/Profile'
-import Browser from './pages/Search'
+import Search from './pages/Search'
+import Browse from './pages/Browse'
 
 export const App = () => {
   const [expiryTime, setExpiryTime] = useState(0)
@@ -33,7 +34,7 @@ export const App = () => {
               setExpiryTime={setExpiryTime}
             />
           </Route>
-          <Route path="/" exact={true}>
+          <Route path="/top" exact={true}>
             <Dashboard
               isValidSession={isValidSection}
               setExpiryTime={setExpiryTime}
@@ -43,7 +44,10 @@ export const App = () => {
             <Profile isValidSession={isValidSection} />
           </Route>
           <Route path="/search">
-            <Browser isValidSession={isValidSection} />
+            <Search isValidSession={isValidSection} />
+          </Route>
+          <Route path="/">
+            <Browse isValidSession={isValidSection} />
           </Route>
           <Route component={PageNotFound} />
         </Switch>

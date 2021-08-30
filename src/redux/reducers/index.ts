@@ -4,6 +4,8 @@ import artistsReducer from './artists'
 import currentPageReducer from './currentPage'
 import playListsReducer from './playlist'
 import ProfileReducer from './profile'
+import searchPhraseReducer from './searchPhrase'
+
 import topTracksReducers from './topTracks'
 import TrackReducers from './track'
 
@@ -14,6 +16,7 @@ export const rootReducer = combineReducers({
   topTracks: topTracksReducers,
   currentPage: currentPageReducer,
   profile: ProfileReducer,
+  searchPhrase: searchPhraseReducer,
   tracks: TrackReducers,
 })
 export default rootReducer
