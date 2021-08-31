@@ -42,7 +42,6 @@ const Search = ({ isValidSession }: Props) => {
 
   return isValidSession() ? (
     <>
-      <Header />
       <div className="text-gray-200 space-y-2 font-semibold">
         <input
           className="w-full bg-gray-700 p-2 rounded-md pl-3 font-semibold"

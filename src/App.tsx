@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import Profile from './pages/Profile'
 import Search from './pages/Search'
 import Browse from './pages/Browse'
+import Layout from './components/Layout'
 
 export const App = () => {
   const [expiryTime, setExpiryTime] = useState(0)
@@ -14,42 +15,30 @@ export const App = () => {
     setExpiryTime(JSON.parse(localStorage.getItem('expiry_time') || '0'))
     console.log('Chay useEffect App.tsx setExpiryTime')
   }, [])
-  const isValidSection = () => {
+  const isValidSession = () => {
+    let expTime = JSON.parse(localStorage.getItem('expiry_time') || '0')
     const currentTime = new Date().getTime()
-    return currentTime < expiryTime
+    return currentTime < expTime
   }
   return (
-    <div className="bg-black p-4 min-h-screen">
+    <div className="bg-black min-h-screen">
       <BrowserRouter>
         <Switch>
           <Route path="/auth">
             <Auth
-              isValidSession={isValidSection}
+              isValidSession={isValidSession}
               setExpiryTime={setExpiryTime}
             />
           </Route>
           <Route path="/redirect">
             <Redirect
-              isValidSession={isValidSection}
+              isValidSession={isValidSession}
               setExpiryTime={setExpiryTime}
             />
           </Route>
-          <Route path="/top" exact={true}>
-            <Dashboard
-              isValidSession={isValidSection}
-              setExpiryTime={setExpiryTime}
-            />
+          <Route>
+            <Layout isValidSession={isValidSession} />
           </Route>
-          <Route path="/profile">
-            <Profile isValidSession={isValidSection} />
-          </Route>
-          <Route path="/search">
-            <Search isValidSession={isValidSection} />
-          </Route>
-          <Route path="/">
-            <Browse isValidSession={isValidSection} />
-          </Route>
-          <Route component={PageNotFound} />
         </Switch>
       </BrowserRouter>
     </div>

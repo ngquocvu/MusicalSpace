@@ -7,14 +7,10 @@ import { Redirect } from 'react-router-dom'
 import { Header } from '../../components/Header'
 import { setPage } from '../../redux/actions/currentPage'
 interface DashboardProps {
-  setExpiryTime: (time: number) => void
   isValidSession: () => boolean
 }
 
-export const Dashboard = ({
-  setExpiryTime,
-  isValidSession,
-}: DashboardProps) => {
+export const Dashboard = ({ isValidSession }: DashboardProps) => {
   const dispatch = useDispatch()
   // const artists = useSelector((state: RootState) => state.artists)
   // const albums = useSelector((state: RootState) => state.albums)
