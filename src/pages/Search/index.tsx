@@ -44,7 +44,7 @@ const Search = ({ isValidSession }: Props) => {
     <>
       <div className="text-gray-200 space-y-2 py-2 font-semibold">
         <input
-          className="w-full bg-gray-700 p-2 rounded-md pl-3 font-semibold"
+          className="w-full bg-gray-800 p-2 rounded-md pl-3 font-semibold ring-2 ring-green-700 "
           placeholder="Nhập nội dung tìm kiếm..."
           defaultValue={searchPhrase}
           onChange={(event) => {

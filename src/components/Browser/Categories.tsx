@@ -36,7 +36,7 @@ const Categories = ({}: Props) => {
       <div className="font-bold text-gray-100 sm:text-2xl text-xl pt-2 px-2 md:mb-1 rounded-md">
         Thể loại
       </div>
-      <div className="sm:grid flex sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:overflow-auto overflow-scroll sm:place-items-center ">
+      <div className="sm:grid flex sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4 sm:overflow-auto overflow-scroll sm:place-items-center ">
         {categories.categories.items.map((category, index) => (
           <Card
             key={index}
