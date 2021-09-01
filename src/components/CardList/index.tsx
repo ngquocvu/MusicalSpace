@@ -32,7 +32,7 @@ export const CardList = ({ content }: CardListProps) => {
     audio.play()
   }
   return (
-    <div className="w-full grid lg:grid-cols-7 md:grid-cols-7 gap-2 grid-cols-3">
+    <div className="w-full grid lg:grid-cols-6 md:grid-cols-7 grid-cols-3">
       {content.items.map((item, index) => (
         <Card
           key={index}

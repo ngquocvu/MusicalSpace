@@ -1,12 +1,12 @@
 import React from 'react'
+import Categories from '../../components/Browser/Categories'
 
 interface SuggestionProps {}
 
 const Suggestion = (props: SuggestionProps) => {
   return (
-    <div className="space-y-4 pt-2">
-      <div className="text-xl"> Chưa có nội dung tìm kiếm</div>
-      <div className="grid md:grid-cols-3 grid-cols-2 gap-2"></div>
+    <div className="space-y-4">
+      <Categories />
     </div>
   )
 }

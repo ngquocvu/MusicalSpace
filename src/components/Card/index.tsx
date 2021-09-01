@@ -14,7 +14,7 @@ const Card = ({
 }: CardProps) => {
   return (
     <div
-      className="group cursor-pointer relative"
+      className="group cursor-pointer relative "
       onClick={() => playAudio(previewURL)}
     >
       <div className="absolute bottom-5 p-2 transition text-sm w-full text-center opacity-0 z-20 group-hover:opacity-100">

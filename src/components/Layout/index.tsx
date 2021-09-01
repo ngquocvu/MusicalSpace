@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Browse from '../../pages/Browse'
-import { Dashboard } from '../../pages/Dashboard'
+import { Dashboard } from '../../pages/Top'
 import { PageNotFound } from '../../pages/PageNotFound'
 import Profile from '../../pages/Profile'
 import Search from '../../pages/Search'
@@ -15,7 +15,7 @@ const Layout = ({ isValidSession }: LayoutProps) => {
   return (
     <>
       <Header />
-      <div className="p-4">
+      <div className="p-2">
         <Switch>
           <Route path="/search">
             <Search isValidSession={isValidSession} />
@@ -26,12 +26,11 @@ const Layout = ({ isValidSession }: LayoutProps) => {
           <Route path="/profile">
             <Profile isValidSession={isValidSession} />
           </Route>
+          <Route path="/top" exact={true}></Route>
           <Route component={PageNotFound} />
-          <Route path="/top" exact={true}>
-            <Dashboard isValidSession={isValidSession} />
-          </Route>
         </Switch>
       </div>
+      <div className="div pt-10"> </div>
     </>
   )
 }

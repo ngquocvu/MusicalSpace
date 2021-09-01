@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Redirect from './pages/Redirect'
 import { PageNotFound } from './pages/PageNotFound'
-import { Dashboard } from './pages/Dashboard'
+import { Dashboard } from './pages/Top'
 import Auth from './pages/Auth'
 import { useEffect, useState } from 'react'
 import Profile from './pages/Profile'

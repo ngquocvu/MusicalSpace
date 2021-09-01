@@ -42,7 +42,7 @@ const Search = ({ isValidSession }: Props) => {
 
   return isValidSession() ? (
     <>
-      <div className="text-gray-200 space-y-2 font-semibold">
+      <div className="text-gray-200 space-y-2 py-2 font-semibold">
         <input
           className="w-full bg-gray-700 p-2 rounded-md pl-3 font-semibold"
           placeholder="Nhập nội dung tìm kiếm..."
@@ -51,10 +51,10 @@ const Search = ({ isValidSession }: Props) => {
             dispatch(setSearchPhrase(event.target.value))
           }}
         />
-        {console.log(searchPhrase)}
+
         {tracks.items[0].name !== '' ? (
           <>
-            <CardList type="Top results" content={tracks} />
+            <CardList type="Kết quả tìm kiếm" content={tracks} />
           </>
         ) : (
           <Suggestion />

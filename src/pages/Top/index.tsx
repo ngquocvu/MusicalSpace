@@ -27,9 +27,9 @@ export const Dashboard = ({ isValidSession }: DashboardProps) => {
     dispatch(setPage('topSongs'))
   }, [])
   return isValidSession() ? (
-    <div className="flex flex-col text-white bg-black min-h-screen">
-      <Header />
-      <div className="w-full">
+    <div className="flex flex-col text-white md:px-4  rounded-md font-bold bg-black min-h-screen">
+      <div className="text-xl sm:text-2xl  py-3 pl-2">Top ca khúc của bạn</div>
+      <div className="w-full px-2">
         <CardList content={tracks} />
       </div>
     </div>
