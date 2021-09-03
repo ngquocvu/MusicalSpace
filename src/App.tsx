@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import React, { Suspense } from 'react'
+import Loading from './components/Loading'
 
 export const App = () => {
   const LayoutPage = React.lazy(() => import('./components/Layout'))
@@ -13,7 +14,7 @@ export const App = () => {
   }
   return (
     <div className="bg-gray-900 min-h-screen">
-      <Suspense fallback={<div></div>}>
+      <Suspense fallback={<Loading />}>
         <BrowserRouter>
           <Switch>
             <Route path="/auth">

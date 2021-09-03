@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { FEATURE_PLAYLIST_URL, NEW_RELEASES_URL } from '../../utils/constants'
+import { NEW_RELEASES_URL } from '../../utils/constants'
 import { get } from '../../utils/functions'
 import { AlbumProps } from '../../utils/interfaces'
-import Card from './Card'
+import Card from '../Card'
+import CardList from '../CardList'
 interface Props {}
 
 const FeaturePlaylists = ({}: Props) => {
@@ -36,10 +37,7 @@ const FeaturePlaylists = ({}: Props) => {
 
   return !!featurePlaylist.albums.items[0].images[0].url ? (
     <>
-      <div className="font-bold text-gray-100 sm:text-2xl text-xl pt-2 px-2 rounded-md ">
-        Mới ra mắt
-      </div>
-      <div className="sm:grid flex sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:overflow-auto overflow-scroll sm:place-items-center ">
+      <CardList type="Mới ra mắt">
         {featurePlaylist.albums.items.map((albums, index) => (
           <Card
             key={index}
@@ -49,7 +47,7 @@ const FeaturePlaylists = ({}: Props) => {
             preview_url={albums.external_urls.spotify}
           />
         ))}
-      </div>
+      </CardList>
     </>
   ) : (
     <div></div>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { Header } from '../../components/Header'
+import Loading from '../../components/Loading'
 import { setPage } from '../../redux/actions/currentPage'
 import { loadProfile } from '../../redux/actions/profile'
 import { RootState } from '../../redux/reducers'
@@ -49,7 +50,7 @@ const Profile = ({ isValidSession }: Props) => {
           Đăng xuất
         </div>
         {/* <div className="text-gray-50">Followers: {profile.followers.total}</div> */}
-        <Dashboard isValidSession={isValidSession} />
+        {/* <Dashboard isValidSession={isValidSession} /> */}
       </div>
     </div>
   )

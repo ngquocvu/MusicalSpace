@@ -16,20 +16,24 @@ export const Header = () => {
     <div className="flex justify-between items-center bg-gray-900 md:p-2 md:px-4 px-3 py-3">
       <div className="font-bold text-lg md:text-lg flex space-x-6 text-gray-400 cursor-pointer">
         <div
-          className={currentPage === 'search' ? 'text-gray-50 ' : ''}
+          className={
+            currentPage === 'search' ? 'text-gray-50 ' : 'hover:text-gray-300'
+          }
           onClick={() => history.push('/search')}
         >
-          Search
+          Tìm kiếm
         </div>
         <div
-          className={currentPage === 'browse' ? 'text-gray-50' : ''}
+          className={
+            currentPage === 'browse' ? 'text-gray-50' : 'hover:text-gray-300'
+          }
           onClick={() => history.push('/')}
         >
-          Browse
+          Trang chủ
         </div>
       </div>
       <div
-        className="flex text-gray-200 items-center space-x-2 md:bg-green-800 py-1 pl-3 pr-2 rounded-full cursor-pointer"
+        className="flex text-gray-200 items-center space-x-2 transition-colors md:hover:bg-green-700 md:bg-green-800 py-1 pl-3 pr-2 rounded-full cursor-pointer"
         onClick={() => history.push('/profile')}
       >
         <div className="font-bold text-xs hidden md:block">

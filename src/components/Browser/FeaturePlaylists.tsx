@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { FEATURE_PLAYLIST_URL } from '../../utils/constants'
 import { get } from '../../utils/functions'
 import { FeaturePlaylistProps } from '../../utils/interfaces'
-import Card from './Card'
+import Card from '../Card'
+import CardList from '../CardList'
 interface Props {}
 
 const FeaturePlaylists = ({}: Props) => {
@@ -36,10 +37,7 @@ const FeaturePlaylists = ({}: Props) => {
 
   return !!featurePlaylist.playlists.items[0].images[0].url ? (
     <>
-      <div className="font-bold text-gray-100 sm:text-2xl text-xl pt-2 px-2 md:mb-1 rounded-md">
-        Dành cho bạn
-      </div>
-      <div className="sm:grid flex sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:overflow-auto overflow-scroll sm:place-items-center ">
+      <CardList type="Dành cho bạn">
         {featurePlaylist.playlists.items.map((playlist, index) => (
           <Card
             key={index}
@@ -49,7 +47,7 @@ const FeaturePlaylists = ({}: Props) => {
             preview_url={playlist.external_urls.spotify}
           />
         ))}
-      </div>
+      </CardList>
     </>
   ) : (
     <div></div>

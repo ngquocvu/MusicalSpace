@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './index.css'
+import './styles.css'
 interface CardProps {
   thumbnail: string
   title: string
@@ -31,7 +31,7 @@ const Card = ({
         className=" rounded-md pb-4 text-gray-200 h-full bg-gray-800 shadow-lg group-hover:bg-gray-700 transition-colors duration-200 ease-in-out"
         onClick={() => (window.location.href = preview_url || '#')}
       >
-        <div className="cursor-pointer  p-4">
+        <div className="cursor-pointer  p-2 sm:p-4">
           {isLoaded ? (
             <a className="relative sm:h-48 h-32 w-full flex">
               <img
@@ -55,7 +55,7 @@ const Card = ({
             {title}
           </div>
           {description ? (
-            <div className="text-xs text-gray-400 truncate-2 font-medium overflow-ellipsis  font-normal ">
+            <div className="text-xs text-gray-400 truncate-2 overflow-ellipsis  font-normal ">
               {description}
             </div>
           ) : (

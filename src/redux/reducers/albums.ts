@@ -10,6 +10,9 @@ const defaultContent = {
         },
       ],
       name: '',
+      external_url: {
+        spotify: '',
+      },
       images: [
         {
           url: '',
