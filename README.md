@@ -1,5 +1,8 @@
 ## MUSICAL SPACE APP
 
+Dữ liệu: Spotify API
+Công nghệ xử dụng: Redux, Redux Thunks
+
 ## LOG HISTORY
 
 26.08.2021

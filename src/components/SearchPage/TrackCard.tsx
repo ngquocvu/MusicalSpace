@@ -7,7 +7,7 @@ interface Props {
 const Card = ({ track }: Props) => {
   return (
     <div
-      className="rounded-md bg-gray-900"
+      className="rounded-md bg-gray-800"
       onClick={() => (window.location.href = track.external_urls.spotify)}
     >
       <div className="group cursor-pointer relative px-2 pt-3">

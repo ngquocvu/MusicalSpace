@@ -29,11 +29,11 @@ export const Header = () => {
         </div>
       </div>
       <div
-        className="flex text-gray-200 items-center space-x-2 md:bg-green-800 py-1 px-2 rounded-full cursor-pointer"
+        className="flex text-gray-200 items-center space-x-2 md:bg-green-800 py-1 pl-3 pr-2 rounded-full cursor-pointer"
         onClick={() => history.push('/profile')}
       >
         <div className="font-bold text-xs hidden md:block">
-          {profile.display_name}
+          {String(profile.display_name).split(' ')[0]}
         </div>
         <img src={profile.images[0].url} className="rounded-full h-8 " />
       </div>

@@ -1,16 +1,14 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Browse from '../../pages/Browse'
-import { Dashboard } from '../../pages/Top'
 import { PageNotFound } from '../../pages/PageNotFound'
-import Profile from '../../pages/Profile'
-import Search from '../../pages/Search'
 import { Header } from '../Header'
 
 interface LayoutProps {
   isValidSession: () => boolean
 }
-
+const Search = React.lazy(() => import('../../pages/Search'))
+const Browse = React.lazy(() => import('../../pages/Browse'))
+const Profile = React.lazy(() => import('../../pages/Profile'))
 const Layout = ({ isValidSession }: LayoutProps) => {
   return (
     <>

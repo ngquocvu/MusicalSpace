@@ -17,7 +17,7 @@ interface Props {
 const Search = ({ isValidSession }: Props) => {
   const dispatch = useDispatch()
   const searchPhrase = useSelector((state: RootState) => state.searchPhrase)
-  const albums = useSelector((state: RootState) => state.albums)
+  //const albums = useSelector((state: RootState) => state.albums)
   const tracks = useSelector((state: RootState) => state.tracks)
   useEffect(() => {
     dispatch(setPage('search'))
@@ -44,8 +44,8 @@ const Search = ({ isValidSession }: Props) => {
     <>
       <div className="text-gray-200 space-y-2 py-2 font-semibold">
         <input
-          className="w-full bg-gray-800 p-2 rounded-md pl-3 font-semibold ring-2 ring-green-700 "
-          placeholder="Nhập nội dung tìm kiếm..."
+          className="w-full bg-gray-800 p-2 rounded-md pl-3 font-semibold ring-2 ring-green-700 focus:ring-green-500"
+          placeholder="Tìm kiếm bài hát, ca sĩ, album,..."
           defaultValue={searchPhrase}
           onChange={(event) => {
             dispatch(setSearchPhrase(event.target.value))

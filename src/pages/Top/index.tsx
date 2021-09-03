@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../redux/reducers'
-import { CardList } from '../../components/CardList'
+import { CardList } from '../../components/Top/CardList'
 import { loadTopTrack } from '../../redux/actions/tracks'
 import { Redirect } from 'react-router-dom'
 import { Header } from '../../components/Header'

@@ -3,11 +3,10 @@ const handleLogin = () => {
   window.location.href = `${process.env.REACT_APP_AUTHORIZE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public&response_type=token&show_dialog=true`
 }
 interface AuthProps {
-  setExpiryTime: (time: number) => void
   isValidSession: () => boolean
 }
 
-export const Auth = ({ setExpiryTime, isValidSession }: AuthProps) => {
+export const Auth = ({ isValidSession }: AuthProps) => {
   return !isValidSession() ? (
     <div className=" mx-auto flex flex-col items-center pt-12 min-h-screen space-y-4 ">
       <div className="text-2xl font-bold  text-gray-200">Đăng nhập </div>

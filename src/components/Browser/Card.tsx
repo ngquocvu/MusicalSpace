@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import './index.css'
 interface CardProps {
   thumbnail: string
   title: string
@@ -26,32 +26,36 @@ const Card = ({
     }, 200)
   }, [])
   return (
-    <div
-      className="flex-shrink-0 w-36 sm:w-full"
-      onClick={() => (window.location.href = preview_url || '#')}
-    >
-      <div className="rounded-md text-gray-200 bg-gray-900">
-        <div className="group cursor-pointer relative p-2">
-          <div className="absolute transition bg-gray-100 text-sm w-full text-center opacity-0 z-20 group-hover:opacity-100"></div>
+    <div className="flex-shrink-0 h-full w-36 sm:w-full group cursor-pointer transform hover:scale-95 duration-200">
+      <div
+        className=" rounded-md pb-4 text-gray-200 h-full bg-gray-800 shadow-lg group-hover:bg-gray-700 transition-colors duration-200 ease-in-out"
+        onClick={() => (window.location.href = preview_url || '#')}
+      >
+        <div className="cursor-pointer  p-4">
           {isLoaded ? (
-            <img
-              src={thumbnail}
-              className="object-cover rounded-md object-center sm:h-48 h-36 w-full filter bg-gray-700 group-hover:opacity-50"
-            />
+            <a className="relative sm:h-48 h-32 w-full flex">
+              <img
+                src={thumbnail}
+                className="object-cover absolute  rounded-lg object-center sm:h-48 h-32 w-full filter  group-hover:opacity-80"
+              />
+              {/* <div className="items-center flex justify-center  font-bold text-xs absolute bottom-2 rounded-full group-hover:opacity-100 opacity-0 transition ease-in-out duration-200 bg-green-600 h-12 w-12 right-2">
+                PLAY
+              </div> */}
+            </a>
           ) : (
-            <div className="h-36 md:h-48 animate-pulse w-full bg-gray-700"></div>
+            <div className="h-32 md:h-48 animate-pulse w-full bg-gray-700"></div>
           )}
         </div>
-        <div className="space-y-1 font-bold px-2 pt-2 py-2 ">
+        <div className="space-y-1  px-2 pt-2  font-bold">
           <div
-            className={`text-base truncate ${
-              description ? '' : 'text-center text-lg'
-            }`}
+            className={`text-sm   ${
+              description ? '' : 'text-center text-base'
+            } truncate`}
           >
             {title}
           </div>
           {description ? (
-            <div className="text-xs text-gray-400 overflow-ellipsis truncate pb-2 font-normal ">
+            <div className="text-xs text-gray-400 truncate-2 font-medium overflow-ellipsis  font-normal ">
               {description}
             </div>
           ) : (
