@@ -87,7 +87,11 @@ const Search = ({ isValidSession }: Props) => {
               {artists.items.map((artist: any, index: number) => (
                 <Card
                   key={index}
-                  thumbnail={artist.images[0].url}
+                  thumbnail={
+                    artist.images.length != 0
+                      ? artist.images[0].url
+                      : 'https://via.placeholder.com/200'
+                  }
                   title={artist.name}
                   preview_url={'album.external_urls.spotify'}
                 />

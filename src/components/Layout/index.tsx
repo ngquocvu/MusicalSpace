@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { PageNotFound } from '../../pages/PageNotFound'
 import { Header } from '../Header'
+import Loading from '../Loading'
 
 interface LayoutProps {
   isValidSession: () => boolean
@@ -14,21 +15,22 @@ const Layout = ({ isValidSession }: LayoutProps) => {
     <>
       <Header />
       <div className="p-2">
-        <Switch>
-          <Route path="/search">
-            <Search isValidSession={isValidSession} />
-          </Route>
-          <Route exact path="/">
-            <Browse isValidSession={isValidSession} />
-          </Route>
-          <Route path="/profile">
-            <Profile isValidSession={isValidSession} />
-          </Route>
-          <Route path="/top" exact={true}></Route>
-          <Route component={PageNotFound} />
-        </Switch>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <Route path="/search">
+              <Search isValidSession={isValidSession} />
+            </Route>
+            <Route exact path="/">
+              <Browse isValidSession={isValidSession} />
+            </Route>
+            <Route path="/profile">
+              <Profile isValidSession={isValidSession} />
+            </Route>
+            <Route path="/top" exact={true}></Route>
+            <Route component={PageNotFound} />
+          </Switch>
+        </Suspense>
       </div>
-      <div className="div pt-10"> </div>
     </>
   )
 }
