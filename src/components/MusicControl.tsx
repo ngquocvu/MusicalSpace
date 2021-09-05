@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/reducers'
+import Play from '../assets/images/play.png'
+import Pause from '../assets/images/pause.png'
 
 interface Props {}
 
@@ -42,9 +44,9 @@ const MusicControl = (props: Props) => {
             onClick={() => setIsPlaying(!isPlaying)}
           >
             {isPlaying ? (
-              <img src="../../public/pause.png" className="h-3 w-3" />
+              <img src={Pause} className="h-3 w-3" />
             ) : (
-              <img src="../../public/play.png" className="h-5 w-5" />
+              <img src={Play} className="h-5 w-5" />
             )}
           </div>
           <div className="flex flex-col text-left">
@@ -60,7 +62,7 @@ const MusicControl = (props: Props) => {
         <img
           onClick={() => setIsPlaying(!isPlaying)}
           src={currentTrack.thumbnail}
-          className="absolute flex cursor-pointer hover:scale-110 bg-gray-100 font-mono text-xl w-24 h-24 justify-center items-center rounded-full right-4 bottom-5"
+          className="absolute flex cursor-pointer hover:scale-110 bg-gray-100 font-mono text-xl  md:w-24 md:h-24 w-20 h-20  justify-center items-center rounded-full right-4 bottom-5"
         ></img>
       </div>
     </div>
