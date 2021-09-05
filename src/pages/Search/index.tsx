@@ -64,7 +64,7 @@ const Search = ({ isValidSession }: Props) => {
                   thumbnail={track.album.images[0].url}
                   title={track.name}
                   description={track.artists[0].name}
-                  preview_url={track.external_urls.spotify}
+                  preview_url={track.preview_url}
                 />
               ))}
             </CardList>
@@ -77,7 +77,7 @@ const Search = ({ isValidSession }: Props) => {
                   thumbnail={album.images[0].url}
                   title={album.name}
                   description={album.artists[0].name}
-                  preview_url={album.external_urls.spotify}
+                  preview_url={''}
                 />
               ))}
             </CardList>
@@ -93,7 +93,7 @@ const Search = ({ isValidSession }: Props) => {
                       : 'https://via.placeholder.com/200'
                   }
                   title={artist.name}
-                  preview_url={'album.external_urls.spotify'}
+                  preview_url={''}
                 />
               ))}
             </CardList>

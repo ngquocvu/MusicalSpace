@@ -33,13 +33,13 @@ export const Header = () => {
         </div>
       </div>
       <div
-        className="flex text-gray-200 items-center space-x-2 transition-colors md:hover:bg-green-700 md:bg-green-800 py-1 pl-3 pr-2 rounded-full cursor-pointer"
+        className="flex text-gray-200 items-center space-x-2 transition-colors md:hover:bg-green-700 md:bg-green-800 py-1 pl-2 pr-3 rounded-full cursor-pointer"
         onClick={() => history.push('/profile')}
       >
+        <img src={profile.images[0].url} className="rounded-full h-8 " />
         <div className="font-bold text-xs hidden md:block">
           {String(profile.display_name).split(' ')[0]}
         </div>
-        <img src={profile.images[0].url} className="rounded-full h-8 " />
       </div>
     </div>
   )

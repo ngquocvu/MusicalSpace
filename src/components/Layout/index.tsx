@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { PageNotFound } from '../../pages/PageNotFound'
 import { Header } from '../Header'
 import Loading from '../Loading'
+import MusicControl from '../MusicControl'
 
 interface LayoutProps {
   isValidSession: () => boolean
@@ -14,7 +15,7 @@ const Layout = ({ isValidSession }: LayoutProps) => {
   return (
     <>
       <Header />
-      <div className="p-2">
+      <div className="p-2 pb-24">
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route path="/search">
@@ -31,6 +32,7 @@ const Layout = ({ isValidSession }: LayoutProps) => {
           </Switch>
         </Suspense>
       </div>
+      <MusicControl />
     </>
   )
 }

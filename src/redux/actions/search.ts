@@ -43,7 +43,7 @@ export const initiateGetResult = (searchTerm: string) => {
     try {
       const API_URL = `https://api.spotify.com/v1/search?query=${encodeURIComponent(
         searchTerm
-      )}&type=album,playlist,artist,track&limit=6`
+      )}&type=album,playlist,artist,track&limit=6&market=VN`
       const result = await get(API_URL)
       const { albums, playlists, artists, tracks } = result
       console.log(result)

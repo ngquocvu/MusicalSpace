@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setCurrentTrack } from '../redux/actions/currentTrack'
 import './styles.css'
 interface CardProps {
   thumbnail: string
@@ -13,6 +15,7 @@ const initialState = {
   description: '',
   preview_url: '',
 }
+
 const Card = ({
   thumbnail,
   title,
@@ -20,16 +23,32 @@ const Card = ({
   preview_url,
 }: CardProps = initialState) => {
   const [isLoaded, setIsLoaded] = useState(false)
+  const dispatch = useDispatch()
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true)
     }, 200)
   }, [])
+  const onTrackClick = () => {
+    console.log(preview_url)
+
+    dispatch(
+      setCurrentTrack({
+        preview_url: preview_url || '',
+        title,
+        thumbnail,
+        artist: description || '',
+      })
+    )
+  }
   return (
-    <div className="flex-shrink-0 h-full w-36 sm:w-full group cursor-pointer transform hover:scale-95 duration-200">
+    <div
+      className="flex-shrink-0 h-full w-36 sm:w-full group cursor-pointer transform hover:scale-95 duration-200"
+      onClick={() => onTrackClick()}
+    >
       <div
         className=" rounded-md pb-4 text-gray-200 h-full bg-gray-800 shadow-lg group-hover:bg-gray-700 transition-colors duration-200 ease-in-out"
-        onClick={() => (window.location.href = preview_url || '#')}
+        // onClick={() => (window.location.href = preview_url || '#')}
       >
         <div className="cursor-pointer  p-2 sm:p-4">
           {isLoaded ? (

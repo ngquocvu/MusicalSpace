@@ -44,7 +44,6 @@ const FeaturePlaylists = ({}: Props) => {
             thumbnail={albums.images[0].url}
             title={albums.name}
             description={albums.artists[0].name}
-            preview_url={albums.external_urls.spotify}
           />
         ))}
       </CardList>
