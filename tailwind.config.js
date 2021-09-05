@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         gray: colors.trueGray,
       },
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
+      },
     },
   },
   variants: {},

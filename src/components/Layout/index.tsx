@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { PageNotFound } from '../../pages/PageNotFound'
 import { Header } from '../Header'
 import Loading from '../Loading'
-import MusicControl from '../MusicControl'
+import MusicControl from '../MusicControler'
 
 interface LayoutProps {
   isValidSession: () => boolean

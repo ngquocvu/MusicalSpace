@@ -16,7 +16,10 @@ const initialState = {
   thumbnail: '',
   preview_url: '',
 }
-const CurrentTrackReducer = (state: StateProps = initialState, action: any) => {
+const CurrentTrackReducer = (
+  state: StateProps = initialState,
+  action: ActionProps
+) => {
   const { currentTrack } = action
   switch (action.type) {
     case SET_CURRENT_TRACK:

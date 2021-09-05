@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../redux/reducers'
 import Play from '../assets/images/play.png'
 import Pause from '../assets/images/pause.png'
+import Spotify from '../assets/images/spotify.png'
 
 interface Props {}
 
@@ -28,30 +29,37 @@ const MusicControl = (props: Props) => {
     }
   }, [currentTrack.preview_url])
 
-  return currentTrack.preview_url !== '' ? (
+  return (
     <div className="fixed w-full bg-transparent h-24 bottom-0">
-      <audio
-        ref={audioPlayer}
-        src={currentTrack.preview_url}
-        onEnded={() => {
-          setIsPlaying(false)
-        }}
-      ></audio>
+      {currentTrack.preview_url ? (
+        <audio
+          ref={audioPlayer}
+          src={currentTrack.preview_url}
+          onEnded={() => {
+            setIsPlaying(false)
+          }}
+        ></audio>
+      ) : (
+        <></>
+      )}
       <div className="w-full bottom-0 h-24 relative">
-        <div className="absolute bg-gray-700 w-full h-20 flex items-center justify-start space-x-4 px-4 bottom-0">
+        <div className="absolute bg-gray-800 w-full h-16 md:h-20 flex items-center justify-start space-x-4 pl-8 bottom-0">
           <div
-            className="font-normal flex h-8 w-8 bg-gray-50 text-sm rounded-full justify-center items-center cursor-pointer"
+            className="font-normal flex h-9 w-9 bg-white text-sm rounded-full justify-center items-center cursor-pointer"
             onClick={() => setIsPlaying(!isPlaying)}
           >
             {isPlaying ? (
               <img src={Pause} className="h-3 w-3" />
             ) : (
-              <img src={Play} className="h-5 w-5" />
+              <img src={Play} className="h-3 w-3" />
             )}
           </div>
           <div className="flex flex-col text-left">
-            <div className="font-bold text-gray-100 text-base">
-              {currentTrack.title}
+            <div className="font-bold flex space-x-1 items-center text-gray-100 text-base">
+              <div>{currentTrack.title}</div>
+              <div className="text-xs font-normal">
+                {currentTrack.preview_url ? '' : '(Chưa có bản phát thử)'}
+              </div>
             </div>
             <div className="font-normal text-gray-200 text-xs">
               {currentTrack.artist}
@@ -61,13 +69,15 @@ const MusicControl = (props: Props) => {
 
         <img
           onClick={() => setIsPlaying(!isPlaying)}
-          src={currentTrack.thumbnail}
-          className="absolute flex cursor-pointer hover:scale-110 bg-gray-100 font-mono text-xl  md:w-24 md:h-24 w-20 h-20  justify-center items-center rounded-full right-4 bottom-5"
+          src={
+            currentTrack.thumbnail
+              ? currentTrack.thumbnail
+              : '../assets/images/spotify.png'
+          }
+          className="absolute flex animate-spin-slow cursor-pointer hover:scale-110 bg-gray-50 font-mono text-xl  md:w-28 md:h-28 w-16 h-16  justify-center items-center rounded-full right-5 bottom-4 "
         ></img>
       </div>
     </div>
-  ) : (
-    <> </>
   )
 }
 
