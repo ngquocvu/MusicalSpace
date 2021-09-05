@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../redux/reducers'
 import Play from '../assets/images/play.png'
 import Pause from '../assets/images/pause.png'
-import Spotify from '../assets/images/spotify.png'
+import './styles.css'
 
 interface Props {}
 
@@ -45,7 +45,7 @@ const MusicControl = (props: Props) => {
       <div className="w-full bottom-0 h-24 relative">
         <div className="absolute bg-gray-800 w-full h-16 md:h-20 flex items-center justify-start space-x-4 pl-8 bottom-0">
           <div
-            className="font-normal flex h-9 w-9 bg-white text-sm rounded-full justify-center items-center cursor-pointer"
+            className="font-normal flex-shrink-0 flex h-9 w-9 bg-white text-sm rounded-full justify-center items-center cursor-pointer"
             onClick={() => setIsPlaying(!isPlaying)}
           >
             {isPlaying ? (
@@ -54,26 +54,18 @@ const MusicControl = (props: Props) => {
               <img src={Play} className="h-3 w-3" />
             )}
           </div>
-          <div className="flex flex-col text-left">
-            <div className="font-bold flex space-x-1 items-center text-gray-100 text-base">
-              <div>{currentTrack.title}</div>
-              <div className="text-xs font-normal">
-                {currentTrack.preview_url ? '' : '(Chưa có bản phát thử)'}
-              </div>
+          <div className="flex flex-shrink-0 flex-col text-left w-full ">
+            <div className="font-bold text-gray-100 text-base  w-1/2 truncate">
+              {currentTrack.title}
             </div>
-            <div className="font-normal text-gray-200 text-xs">
+            <div className="font-normal text-gray-200 text-xs w-1/2 truncate">
               {currentTrack.artist}
             </div>
           </div>
         </div>
-
         <img
           onClick={() => setIsPlaying(!isPlaying)}
-          src={
-            currentTrack.thumbnail
-              ? currentTrack.thumbnail
-              : '../assets/images/spotify.png'
-          }
+          src={currentTrack.thumbnail}
           className="absolute flex animate-spin-slow cursor-pointer hover:scale-110 bg-gray-50 font-mono text-xl  md:w-28 md:h-28 w-16 h-16  justify-center items-center rounded-full right-5 bottom-4 "
         ></img>
       </div>

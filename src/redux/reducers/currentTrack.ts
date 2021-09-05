@@ -1,5 +1,5 @@
 import { SET_CURRENT_TRACK } from '../../utils/constants'
-
+import Spotify from '../../assets/images/spotify.png'
 interface ActionProps {
   type: string
   currentTrack: StateProps
@@ -13,7 +13,7 @@ interface StateProps {
 const initialState = {
   title: '',
   artist: '',
-  thumbnail: '',
+  thumbnail: Spotify,
   preview_url: '',
 }
 const CurrentTrackReducer = (

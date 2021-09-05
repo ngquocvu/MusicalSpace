@@ -5,3 +5,20 @@
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
+.floating-title {
+  position: relative;
+  white-space: nowrap;
+  animation: floatText 10s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes floatText {
+  from {
+    left: 00%;
+  }
+
+  to {
+    /* left: auto; */
+    left: 100%;
+  }
+}
