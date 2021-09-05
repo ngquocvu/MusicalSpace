@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 import { setCurrentTrack } from '../redux/actions/currentTrack'
 import './styles.css'
 interface CardProps {
@@ -8,12 +9,14 @@ interface CardProps {
   description?: string
   circle?: boolean
   preview_url?: string
+  tracks_href?: string
 }
 const initialState = {
   thumbnail: '',
   title: '',
   description: '',
-  preview_url: '',
+  preview_url: undefined,
+  tracks_href: '',
 }
 
 const Card = ({
@@ -21,29 +24,35 @@ const Card = ({
   title,
   description,
   preview_url,
+  tracks_href,
 }: CardProps = initialState) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const dispatch = useDispatch()
+  const history = useHistory()
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true)
     }, 200)
   }, [])
   const onTrackClick = () => {
-    console.log(preview_url)
-
-    dispatch(
-      setCurrentTrack({
-        preview_url: preview_url || '',
-        title,
-        thumbnail,
-        artist: description || '',
-      })
-    )
+    if (preview_url !== undefined && preview_url !== null) {
+      console.log(preview_url)
+      dispatch(
+        setCurrentTrack({
+          preview_url: preview_url || '',
+          title,
+          thumbnail,
+          artist: description || '',
+        })
+      )
+    }
+    if (tracks_href) {
+      history.push('/playlist/' + tracks_href)
+    }
   }
   return (
     <div
-      className="flex-shrink-0 h-full w-36 sm:w-full group cursor-pointer transform hover:scale-95 duration-200"
+      className="flex-shrink-0  w-36 sm:w-full group cursor-pointer transform hover:scale-95 duration-200"
       onClick={() => onTrackClick()}
     >
       <div
@@ -74,7 +83,7 @@ const Card = ({
             {title}
           </div>
           {description ? (
-            <div className="text-xs text-gray-400 truncate-2 overflow-ellipsis  font-normal ">
+            <div className="text-xs text-gray-400 truncate-2 overflow-ellipsis font-normal ">
               {description}
             </div>
           ) : (

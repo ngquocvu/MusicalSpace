@@ -3,6 +3,10 @@ export interface FeaturePlaylistProps {
   playlists: {
     items: [
       {
+        id: string
+        tracks: {
+          href: string
+        }
         name: string
         description: string
         external_urls: {

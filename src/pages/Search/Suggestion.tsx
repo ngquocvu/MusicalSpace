@@ -1,12 +1,12 @@
 import React from 'react'
-import Categories from '../../components/Browser/Categories'
+import FeaturePlaylists from '../../components/Browser/FeaturePlaylists'
 
 interface SuggestionProps {}
 
 const Suggestion = (props: SuggestionProps) => {
   return (
     <div className="space-y-4">
-      <Categories />
+      <FeaturePlaylists />
     </div>
   )
 }

@@ -13,9 +13,13 @@ const FeaturePlaylists = ({}: Props) => {
       items: [
         {
           name: '',
+          id: '',
           images: [{ url: '' }],
           description: '',
           external_urls: { spotify: '' },
+          tracks: {
+            href: '',
+          },
         },
       ],
     },
@@ -44,6 +48,7 @@ const FeaturePlaylists = ({}: Props) => {
             thumbnail={playlist.images[0].url}
             title={playlist.name}
             description={playlist.description}
+            tracks_href={playlist.id}
           />
         ))}
       </CardList>

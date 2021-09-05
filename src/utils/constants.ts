@@ -14,6 +14,8 @@ export const FETCH_PROFILE_ERROR: string = 'FETCH_PROFILE_ERROR'
 export const SET_TRACKS: string = 'SET_TRACKS'
 export const SET_SEARCH_PHRASE: string = 'SET_SEARCH_PHRASE'
 export const SET_CURRENT_TRACK: string = 'SET_CURRENT_TRACK'
+export const PLAYLIST_DEFAULT_URL: string =
+  'https://api.spotify.com/v1/playlists/'
 export const FEATURE_PLAYLIST_URL: string =
   '	https://api.spotify.com/v1/browse/featured-playlists?limit=6&offset=0&country=BN&locale=vn_VN' +
   '&timestamp=' +

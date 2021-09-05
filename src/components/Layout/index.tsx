@@ -11,6 +11,7 @@ interface LayoutProps {
 const Search = React.lazy(() => import('../../pages/Search'))
 const Browse = React.lazy(() => import('../../pages/Browse'))
 const Profile = React.lazy(() => import('../../pages/Profile'))
+const Playlist = React.lazy(() => import('../../pages/Playlist'))
 const Layout = ({ isValidSession }: LayoutProps) => {
   return (
     <>
@@ -26,6 +27,9 @@ const Layout = ({ isValidSession }: LayoutProps) => {
             </Route>
             <Route path="/profile">
               <Profile isValidSession={isValidSession} />
+            </Route>
+            <Route path="/playlist/:id">
+              <Playlist isValidSession={isValidSession} />
             </Route>
             <Route path="/top" exact={true}></Route>
             <Route component={PageNotFound} />

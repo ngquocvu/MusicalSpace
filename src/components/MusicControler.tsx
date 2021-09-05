@@ -66,7 +66,9 @@ const MusicControl = (props: Props) => {
         <img
           onClick={() => setIsPlaying(!isPlaying)}
           src={currentTrack.thumbnail}
-          className="absolute flex animate-spin-slow cursor-pointer hover:scale-110 bg-gray-50 font-mono text-xl  md:w-28 md:h-28 w-16 h-16  justify-center items-center rounded-full right-5 bottom-4 "
+          className={`absolute flex ${
+            isPlaying ? 'animate-spin-slow' : ''
+          } cursor-pointer hover:scale-110 transition-transform duration-100 bg-gray-50 font-mono text-xl  md:w-28 md:h-28 w-16 h-16  justify-center items-center rounded-full right-5 bottom-4`}
         ></img>
       </div>
     </div>

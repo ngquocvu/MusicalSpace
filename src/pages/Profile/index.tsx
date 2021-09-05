@@ -27,7 +27,7 @@ const Profile = ({ isValidSession }: Props) => {
       history.push('/auth')
     }
   }
-  return (
+  return isValidSession() ? (
     <div>
       <div className="flex flex-col justify-center items-center space-y-4 py-5">
         <div className="relative h-40 w-40 flex justify-center">
@@ -53,6 +53,8 @@ const Profile = ({ isValidSession }: Props) => {
         {/* <Dashboard isValidSession={isValidSession} /> */}
       </div>
     </div>
+  ) : (
+    <></>
   )
 }
 
