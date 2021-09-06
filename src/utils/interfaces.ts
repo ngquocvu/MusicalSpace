@@ -21,6 +21,30 @@ export interface FeaturePlaylistProps {
     ]
   }
 }
+export interface PlaylistDetailProps {
+  name: string
+  description: string
+  images: {
+    url: string
+  }[]
+  tracks: {
+    items: {
+      track: {
+        preview_url: string
+        name: string
+        artists: {
+          name: string
+        }[]
+        album: {
+          images: {
+            url: string
+          }[]
+        }
+      }
+    }[]
+  }
+}
+
 export interface AlbumProps {
   albums: {
     items: [

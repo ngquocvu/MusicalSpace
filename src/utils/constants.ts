@@ -17,7 +17,7 @@ export const SET_CURRENT_TRACK: string = 'SET_CURRENT_TRACK'
 export const PLAYLIST_DEFAULT_URL: string =
   'https://api.spotify.com/v1/playlists/'
 export const FEATURE_PLAYLIST_URL: string =
-  '	https://api.spotify.com/v1/browse/featured-playlists?limit=6&offset=0&country=BN&locale=vn_VN' +
+  '	https://api.spotify.com/v1/browse/featured-playlists?limit=6&offset=4&country=VN&locale=vn_VN' +
   '&timestamp=' +
   new Date().toISOString()
 export const NEW_RELEASES_URL: string =

@@ -1,17 +1,17 @@
 import React, { Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { PageNotFound } from '../../pages/PageNotFound'
-import { Header } from '../Header'
-import Loading from '../Loading'
-import MusicControl from '../MusicControler'
+import { PageNotFound } from '../pages/PageNotFound'
+import { Header } from './Header'
+import Loading from './Loading'
+import MusicControl from './MusicControler'
 
 interface LayoutProps {
   isValidSession: () => boolean
 }
-const Search = React.lazy(() => import('../../pages/Search'))
-const Browse = React.lazy(() => import('../../pages/Browse'))
-const Profile = React.lazy(() => import('../../pages/Profile'))
-const Playlist = React.lazy(() => import('../../pages/Playlist'))
+const Search = React.lazy(() => import('../pages/Search'))
+const Browse = React.lazy(() => import('../pages/Browse'))
+const Profile = React.lazy(() => import('../pages/Profile'))
+const Playlist = React.lazy(() => import('../pages/Playlist'))
 const Layout = ({ isValidSession }: LayoutProps) => {
   return (
     <>
@@ -31,7 +31,6 @@ const Layout = ({ isValidSession }: LayoutProps) => {
             <Route path="/playlist/:id">
               <Playlist isValidSession={isValidSession} />
             </Route>
-            <Route path="/top" exact={true}></Route>
             <Route component={PageNotFound} />
           </Switch>
         </Suspense>
